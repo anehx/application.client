@@ -2,12 +2,12 @@ package model;
 
 public class Player extends GameElement {
 	public String name;
-	public boolean isDead = false;
+	public boolean dead = false;
 	
-	public Player(String name, double initialX, double initialY) {
+	public Player(int x, int y, int width, int height, String name) {
+		super(x, y, width, height);
+
 		this.name = name;
-		this.positionX = initialX;
-		this.positionY = initialY;
 	}
 	
 	public void draw() {};

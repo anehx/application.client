@@ -5,7 +5,9 @@ public class Bomb extends GameElement {
 	public boolean isExploded = false;
 	public int countdown = 5;
 
-	public Bomb(int id) {
+	public Bomb(int x, int y, int width, int height, int id) {
+		super(x, y, width, height);
+		
 		this.id = id;
 	}
 	

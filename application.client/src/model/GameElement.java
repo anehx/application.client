@@ -1,8 +1,17 @@
 package model;
 
 public abstract class GameElement {
-	public double positionX = 0;
-	public double positionY = 0;
+	public int x;
+	public int y;
+	public int width;
+	public int height;
+	
+	public GameElement(int x, int y, int width, int height) {
+		this.x = x;
+		this.y = y;
+		this.width = width;
+		this.height = height;
+	}
 
 	public abstract void draw();
 }
