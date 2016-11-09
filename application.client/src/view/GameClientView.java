@@ -6,8 +6,14 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JPanel;
 import java.awt.Color;
+import java.awt.Graphics;
+import java.util.Vector;
+
+import model.GameElement;
 
 public class GameClientView extends JPanel {
+	
+	public LabyrinthView labyrinth;
 
 	public GameClientView() {
 		JFrame frame = new JFrame();
@@ -29,11 +35,10 @@ public class GameClientView extends JPanel {
 		logArea.setBounds(10, 450, 400, 50);
 		frame.getContentPane().add(logArea);
 		
-		JPanel panel = new JPanel();
-		panel.setBackground(Color.LIGHT_GRAY);
-		panel.setBounds(10, 40, 400, 400);
-		frame.getContentPane().add(panel);
+		labyrinth = new LabyrinthView();
+		frame.getContentPane().add(labyrinth);
 		
 		frame.setVisible(true);
 	}
+
 }

@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Graphics;
+
 public abstract class GameElement {
 	public int x;
 	public int y;
@@ -13,5 +15,5 @@ public abstract class GameElement {
 		this.height = height;
 	}
 
-	public abstract void draw();
+	public abstract void draw(Graphics g);
 }

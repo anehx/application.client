@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Graphics;
+
 public class Bomb extends GameElement {
 	public int id;
 	public boolean isExploded = false;
@@ -11,5 +13,5 @@ public class Bomb extends GameElement {
 		this.id = id;
 	}
 	
-	public void draw() {};
+	public void draw(Graphics g) {};
 }

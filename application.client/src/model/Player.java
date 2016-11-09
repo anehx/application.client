@@ -1,5 +1,7 @@
 package model;
 
+import java.awt.Graphics;
+
 public class Player extends GameElement {
 	public String name;
 	public boolean dead = false;
@@ -10,5 +12,5 @@ public class Player extends GameElement {
 		this.name = name;
 	}
 	
-	public void draw() {};
+	public void draw(Graphics g) {};
 }

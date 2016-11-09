@@ -10,7 +10,7 @@ public class LabyrinthStub {
 	
 	protected LabyrinthStub() {};
 	
-	public synchronized LabyrinthStub getInstance() {
+	public synchronized static LabyrinthStub getInstance() {
 		if (LabyrinthStub.instance == null) {
 			LabyrinthStub.instance = new LabyrinthStub();
 		}
@@ -21,9 +21,9 @@ public class LabyrinthStub {
 	public Vector<GameElement> getElements() {
 		Vector<GameElement> elements = new Vector<GameElement>();
 		
-		elements.add(new Box(16, 16, 16, 16, false));
-		elements.add(new Box(16,  0, 16, 16, true));
-		elements.add(new Box(0,  16, 16, 16, true));
+		elements.add(new Box(32, 32, 32, 32, false));
+		elements.add(new Box(32,  0, 32, 32, true));
+		elements.add(new Box(0,  32, 32, 32, true));
 		
 		return elements;
 	}
