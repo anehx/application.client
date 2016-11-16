@@ -1,5 +1,6 @@
 package model;
 
+import java.awt.Color;
 import java.awt.Graphics;
 
 public class Player extends GameElement {
@@ -12,5 +13,9 @@ public class Player extends GameElement {
 		this.name = name;
 	}
 	
-	public void draw(Graphics g) {};
+	public void draw(Graphics g) {
+		g.setColor(Color.red);
+		g.drawString(name, x, y + (height / 2));
+		g.drawRect(x, y, width, height);
+	};
 }

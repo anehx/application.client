@@ -7,7 +7,8 @@ import javax.swing.JPanel;
 import model.GameElement;
 
 public class LabyrinthView extends JPanel {
-
+	private static final long serialVersionUID = 1L;
+	
 	public Vector<GameElement> elements;
 	
 	public LabyrinthView() {

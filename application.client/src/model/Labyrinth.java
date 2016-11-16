@@ -4,9 +4,9 @@ import model.GameElement;
 import java.util.Vector;
 
 public class Labyrinth {
-	private int width;
-	private int height;
-	private Vector<GameElement> elements;
+	public int width;
+	public int height;
+	public Vector<GameElement> elements;
 	
 	public Labyrinth(int width, int height) {
 		this.setWidth(width);
