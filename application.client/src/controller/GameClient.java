@@ -9,6 +9,6 @@ public class GameClient {
 		GameClientView panel = new GameClientView();
 		LabyrinthStub lab = LabyrinthStub.getInstance();
 
-		panel.labyrinth.elements = lab.getElements();
+		panel.labyrinth.elements = lab.elements;
 	}
 }
