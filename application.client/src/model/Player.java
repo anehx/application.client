@@ -7,15 +7,15 @@ public class Player extends GameElement {
 	public String name;
 	public boolean dead = false;
 	
-	public Player(int x, int y, int width, int height, String name) {
-		super(x, y, width, height);
+	public Player(int x, int y, String name) {
+		super(x, y);
 
 		this.name = name;
 	}
 	
 	public void draw(Graphics g) {
 		g.setColor(Color.red);
-		g.drawString(name, x, y + (height / 2));
-		g.drawRect(x, y, width, height);
+		g.drawString(this.name, this.getXInPx(), this.getYInPx() + (this.height / 2));
+		g.drawRect(this.getXInPx(), this.getYInPx(), this.width, this.height);
 	};
 }

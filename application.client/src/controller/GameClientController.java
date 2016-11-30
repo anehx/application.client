@@ -1,14 +1,16 @@
 package controller;
 
-import java.awt.Rectangle;
-
-import model.Box;
+import model.Labyrinth;
 import model.LabyrinthStub;
 import model.Player;
 import view.GameClientView;
 import view.LabyrinthView;
 
 public class GameClientController {
+	public static void main(String args[]) {
+		new GameClientController();
+	}
+	
 	private GameClientView view;
 
 	public GameClientController() {
@@ -16,14 +18,11 @@ public class GameClientController {
 	}
 
 	public void start(String name) {
-		LabyrinthStub stub = LabyrinthStub.getInstance();
-		LabyrinthView labyrinth = new LabyrinthView();
+		Labyrinth labyrinth = LabyrinthStub.getInstance();
+		LabyrinthView labyrinthView = new LabyrinthView(labyrinth);
 		
-		stub.elements.add(new Player(0, 0, 32, 32, name));
-		
-		labyrinth.elements = stub.elements;
-		labyrinth.setBounds(10, 40, stub.width, stub.height);
+		labyrinth.addElement(new Player(0, 0, name));
 
-		view.setLabyrinth(labyrinth);
+		view.setLabyrinth(labyrinthView);
 	}
 }

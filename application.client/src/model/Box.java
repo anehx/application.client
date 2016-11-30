@@ -9,8 +9,8 @@ public class Box extends GameElement {
 	
 	public boolean destroyable;
 	
-	public Box(int x, int y, int width, int height, boolean destroyable) {
-		super(x, y, width, height);
+	public Box(int x, int y, boolean destroyable) {
+		super(x, y);
 		
 		this.destroyable = destroyable;
 	}
@@ -23,7 +23,7 @@ public class Box extends GameElement {
 			g.setColor(Box.COLOR_INDESTROYABLE);
 		}
 		
-		g.fillRect(this.x, this.y, this.width, this.height);
+		g.fillRect(this.getXInPx(), this.getYInPx(), this.width, this.height);
 		
 	};
 }

@@ -1,60 +1,47 @@
 package model;
 
-import java.util.Vector;
-
 public class LabyrinthStub extends Labyrinth {
 	private static LabyrinthStub instance;
 	
-	private static int fieldsPerSide = 13;
-	private static int fieldSize = 32;
-
-	public Vector<GameElement> elements = new Vector<GameElement>();
-	
 	protected LabyrinthStub() {
-		super(
-			LabyrinthStub.fieldSize * LabyrinthStub.fieldsPerSide,
-			LabyrinthStub.fieldSize * LabyrinthStub.fieldsPerSide
-		);
+		super(32, 32);
 		
-		this.elements.add(new Box(32 *  1, 32 *  1, 32, 32, false));
-		this.elements.add(new Box(32 *  3, 32 *  1, 32, 32, false));
-		this.elements.add(new Box(32 *  5, 32 *  1, 32, 32, false));
-		this.elements.add(new Box(32 *  7, 32 *  1, 32, 32, false));
-		this.elements.add(new Box(32 *  9, 32 *  1, 32, 32, false));
-		this.elements.add(new Box(32 * 11, 32 *  1, 32, 32, false));
-		this.elements.add(new Box(32 *  1, 32 *  3, 32, 32, false));
-		this.elements.add(new Box(32 *  3, 32 *  3, 32, 32, false));
-		this.elements.add(new Box(32 *  5, 32 *  3, 32, 32, false));
-		this.elements.add(new Box(32 *  7, 32 *  3, 32, 32, false));
-		this.elements.add(new Box(32 *  9, 32 *  3, 32, 32, false));
-		this.elements.add(new Box(32 * 11, 32 *  3, 32, 32, false));
-		this.elements.add(new Box(32 *  1, 32 *  5, 32, 32, false));
-		this.elements.add(new Box(32 *  3, 32 *  5, 32, 32, false));
-		this.elements.add(new Box(32 *  5, 32 *  5, 32, 32, false));
-		this.elements.add(new Box(32 *  7, 32 *  5, 32, 32, false));
-		this.elements.add(new Box(32 *  9, 32 *  5, 32, 32, false));
-		this.elements.add(new Box(32 * 11, 32 *  5, 32, 32, false));
-		this.elements.add(new Box(32 *  1, 32 *  7, 32, 32, false));
-		this.elements.add(new Box(32 *  3, 32 *  7, 32, 32, false));
-		this.elements.add(new Box(32 *  5, 32 *  7, 32, 32, false));
-		this.elements.add(new Box(32 *  7, 32 *  7, 32, 32, false));
-		this.elements.add(new Box(32 *  9, 32 *  7, 32, 32, false));
-		this.elements.add(new Box(32 * 11, 32 *  7, 32, 32, false));
-		this.elements.add(new Box(32 *  1, 32 *  9, 32, 32, false));
-		this.elements.add(new Box(32 *  3, 32 *  9, 32, 32, false));
-		this.elements.add(new Box(32 *  5, 32 *  9, 32, 32, false));
-		this.elements.add(new Box(32 *  7, 32 *  9, 32, 32, false));
-		this.elements.add(new Box(32 *  9, 32 *  9, 32, 32, false));
-		this.elements.add(new Box(32 * 11, 32 *  9, 32, 32, false));
-		this.elements.add(new Box(32 *  1, 32 * 11, 32, 32, false));
-		this.elements.add(new Box(32 *  3, 32 * 11, 32, 32, false));
-		this.elements.add(new Box(32 *  5, 32 * 11, 32, 32, false));
-		this.elements.add(new Box(32 *  7, 32 * 11, 32, 32, false));
-		this.elements.add(new Box(32 *  9, 32 * 11, 32, 32, false));
-		this.elements.add(new Box(32 * 11, 32 * 11, 32, 32, false));
-		
-		this.elements.add(new Box(64,  0, 32, 32, true));
-		this.elements.add(new Box(0,  64, 32, 32, true)); 
+		this.elements.add(new Box( 1,  1, false));
+		this.elements.add(new Box( 3,  1, false));
+		this.elements.add(new Box( 5,  1, false));
+		this.elements.add(new Box( 7,  1, false));
+		this.elements.add(new Box( 9,  1, false));
+		this.elements.add(new Box(11,  1, false));
+		this.elements.add(new Box( 1,  3, false));
+		this.elements.add(new Box( 3,  3, false));
+		this.elements.add(new Box( 5,  3, false));
+		this.elements.add(new Box( 7,  3, false));
+		this.elements.add(new Box( 9,  3, false));
+		this.elements.add(new Box(11,  3, false));
+		this.elements.add(new Box( 1,  5, false));
+		this.elements.add(new Box( 3,  5, false));
+		this.elements.add(new Box( 5,  5, false));
+		this.elements.add(new Box( 7,  5, false));
+		this.elements.add(new Box( 9,  5, false));
+		this.elements.add(new Box(11,  5, false));
+		this.elements.add(new Box( 1,  7, false));
+		this.elements.add(new Box( 3,  7, false));
+		this.elements.add(new Box( 5,  7, false));
+		this.elements.add(new Box( 7,  7, false));
+		this.elements.add(new Box( 9,  7, false));
+		this.elements.add(new Box(11,  7, false));
+		this.elements.add(new Box( 1,  9, false));
+		this.elements.add(new Box( 3,  9, false));
+		this.elements.add(new Box( 5,  9, false));
+		this.elements.add(new Box( 7,  9, false));
+		this.elements.add(new Box( 9,  9, false));
+		this.elements.add(new Box(11,  9, false));
+		this.elements.add(new Box( 1, 11, false));
+		this.elements.add(new Box( 3, 11, false));
+		this.elements.add(new Box( 5, 11, false));
+		this.elements.add(new Box( 7, 11, false));
+		this.elements.add(new Box( 9, 11, false));
+		this.elements.add(new Box(11, 11, false));
 	};
 	
 	public synchronized static LabyrinthStub getInstance() {

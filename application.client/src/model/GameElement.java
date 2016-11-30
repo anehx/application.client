@@ -5,15 +5,22 @@ import java.awt.Graphics;
 public abstract class GameElement {
 	public int x;
 	public int y;
-	public int width;
-	public int height;
 	
-	public GameElement(int x, int y, int width, int height) {
+	public final int width = Labyrinth.FIELD_IN_PX;
+	public final int height = Labyrinth.FIELD_IN_PX;
+	
+	public GameElement(int x, int y) {
 		this.x = x;
 		this.y = y;
-		this.width = width;
-		this.height = height;
 	}
 
 	public abstract void draw(Graphics g);
+	
+	public int getXInPx() {
+		return this.x * Labyrinth.FIELD_IN_PX;
+	}
+
+	public int getYInPx() {
+		return this.y * Labyrinth.FIELD_IN_PX;
+	}
 }

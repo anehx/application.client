@@ -19,7 +19,7 @@ public class GameClientView extends JPanel {
 
 	public GameClientView(GameClientController controller) {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 440, 550);
+		frame.setBounds(100, 100, 454, 566);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
@@ -29,7 +29,7 @@ public class GameClientView extends JPanel {
 		nameField.setColumns(10);
 		
 		JButton startBtn = new JButton("Anmelden");
-		startBtn.setBounds(260, 10, 150, 20);
+		startBtn.setBounds(276, 10, 150, 20);
 		startBtn.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -41,7 +41,7 @@ public class GameClientView extends JPanel {
 		
 		JTextArea logArea = new JTextArea();
 		logArea.setEditable(false);
-		logArea.setBounds(10, 450, 400, 50);
+		logArea.setBounds(10, 466, 416, 50);
 		frame.getContentPane().add(logArea);
 		
 		frame.setVisible(true);
