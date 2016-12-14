@@ -28,8 +28,8 @@ public class Bomberman {
 		
 		labyrinth.addObserver(labyrinthView);
 		
-		ActionController actionController = new ActionController(view, labyrinth);
-		KeyController keyController = new KeyController(view, labyrinth);
+		new ActionController(view, labyrinth);
+		new KeyController(view, labyrinth);
 		
 		view.setVisible(true);
 		view.getContentPane().add(labyrinthView, BorderLayout.CENTER);
