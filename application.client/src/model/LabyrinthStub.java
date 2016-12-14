@@ -4,7 +4,7 @@ public class LabyrinthStub extends Labyrinth {
 	private static LabyrinthStub instance;
 	
 	protected LabyrinthStub() {
-		super(32, 32);
+		super(13, 13);
 		
 		this.elements.add(new Box( 1,  1, false));
 		this.elements.add(new Box( 3,  1, false));

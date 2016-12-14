@@ -2,22 +2,31 @@ package view;
 
 import java.awt.Color;
 import java.awt.Graphics;
+import java.util.Observable;
+import java.util.Observer;
+
 import javax.swing.JPanel;
+
 import model.GameElement;
 import model.Labyrinth;
 
-public class LabyrinthView extends JPanel {
+public class LabyrinthView extends JPanel implements Observer {
+	/**
+	 * 
+	 */
 	private static final long serialVersionUID = 1L;
 	
-	public Labyrinth labyrinth;
+	private Labyrinth labyrinth;
 	
 	public LabyrinthView(Labyrinth labyrinth) {
-		super();
-		
 		this.labyrinth = labyrinth;
-
+		
 		this.setBackground(Color.LIGHT_GRAY);
-		this.setBounds(10, 40, 13 * 32, 13 * 32);
+	}
+
+	@Override
+	public void update(Observable labyrinth, Object obj) {
+		this.repaint();
 	}
 	
 	public void paintComponent(Graphics g) {

@@ -1,9 +1,11 @@
 package model;
 
 import model.GameElement;
+
+import java.util.Observable;
 import java.util.Vector;
 
-public class Labyrinth {
+public class Labyrinth extends Observable {
 	public static final int FIELD_IN_PX = 32;
 	
 	public int width;
@@ -18,5 +20,8 @@ public class Labyrinth {
 	
 	public void addElement(GameElement element) {
 		this.elements.add(element);
+		
+		this.setChanged();
+		this.notifyObservers();
 	}
 }
