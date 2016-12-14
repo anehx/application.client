@@ -27,17 +27,20 @@ public class KeyController implements KeyListener {
 	@Override
 	public void keyPressed(KeyEvent e) {
 		switch (e.getKeyCode()) {
+		case 32:
+			System.out.println("drop bomb");
+			break;
 		case 37:
-			System.out.println("left");
+			System.out.println("move left");
 			break;
 		case 38:
-			System.out.println("up");
+			System.out.println("move up");
 			break;
 		case 39:
-			System.out.println("right");
+			System.out.println("move right");
 			break;
 		case 40:
-			System.out.println("down");
+			System.out.println("move down");
 			break;
 		default:
 			break;

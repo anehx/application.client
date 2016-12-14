@@ -14,8 +14,12 @@ public class Player extends GameElement {
 	}
 	
 	public void draw(Graphics g) {
-		g.setColor(Color.red);
-		g.drawString(this.name, this.getXInPx(), this.getYInPx() + (this.height / 2));
-		g.drawRect(this.getXInPx(), this.getYInPx(), this.width, this.height);
+		g.setColor(Color.CYAN);
+		g.fillOval(
+			this.getXInPx() + this.width / 4,
+			this.getYInPx() + this.width / 4,
+			this.width / 2,
+			this.height / 2
+		);
 	};
 }

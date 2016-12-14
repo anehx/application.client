@@ -7,6 +7,7 @@ import javax.swing.JOptionPane;
 
 import model.Box;
 import model.Labyrinth;
+import model.Player;
 import view.View;
 
 public class ActionController implements ActionListener {
@@ -52,6 +53,8 @@ public class ActionController implements ActionListener {
 		this.view.setFocusable(true);
 		this.view.requestFocus();
 		
-		this.labyrinth.addElement(new Box(0, 0, false));
+		this.labyrinth.addElement(new Player(0, 0, name));
+		
+		this.view.txtLog.setText(this.view.txtLog.getText() + "Spieler '" + name + "' ist dem Spiel beigetreten\n");
 	}
 }
