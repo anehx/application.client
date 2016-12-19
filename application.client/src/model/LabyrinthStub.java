@@ -1,10 +1,34 @@
 package model;
 
+import java.io.FileReader;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
 public class LabyrinthStub extends Labyrinth {
 	private static LabyrinthStub instance;
 	
 	protected LabyrinthStub() {
 		super(13, 13);
+		
+        JSONParser parser = new JSONParser();
+        
+        try {
+        	String applicationPath = System.getProperty("user.dir");
+        	String ressourcePath = applicationPath + "/application.client/src/model/labyrinth.json";
+        	Object obj = parser.parse(new FileReader(ressourcePath));
+            
+            JSONObject jsonObject = (JSONObject) obj;
+            JSONArray data = (JSONArray) jsonObject.get("data");
+
+            for (Object o: data) {
+                System.out.println(o);
+            }
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 		
 		this.elements.add(new Box( 1,  1, false));
 		this.elements.add(new Box( 3,  1, false));
