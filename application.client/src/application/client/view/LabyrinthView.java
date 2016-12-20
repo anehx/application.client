@@ -1,26 +1,19 @@
-package view;
+package application.client.view;
 
 import java.awt.Color;
 import java.awt.Graphics;
 import java.util.Observable;
 import java.util.Observer;
-
 import javax.swing.JPanel;
 
-import model.GameElement;
-import model.Labyrinth;
+import application.client.model.GameElement;
+import application.client.model.Labyrinth;
 
+@SuppressWarnings("serial")
 public class LabyrinthView extends JPanel implements Observer {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
+	private Labyrinth labyrinth = Labyrinth.getInstance();
 	
-	private Labyrinth labyrinth;
-	
-	public LabyrinthView(Labyrinth labyrinth) {
-		this.labyrinth = labyrinth;
-		
+	public LabyrinthView() {
 		this.setBackground(Color.LIGHT_GRAY);
 	}
 
@@ -31,9 +24,11 @@ public class LabyrinthView extends JPanel implements Observer {
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		
-		for (GameElement element : this.labyrinth.elements) {
-			element.draw(g);
+
+		if (this.labyrinth.isStarted()) {
+			for (GameElement element : this.labyrinth.getElements()) {
+				element.draw(g);
+			}	
 		}
 	}
 }

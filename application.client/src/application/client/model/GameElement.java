@@ -1,8 +1,8 @@
-package model;
+package application.client.model;
 
 import java.awt.Graphics;
 
-public abstract class GameElement {
+public abstract class GameElement implements Comparable<GameElement> {
 	public int x;
 	public int y;
 	
@@ -15,6 +15,7 @@ public abstract class GameElement {
 	}
 
 	public abstract void draw(Graphics g);
+	public abstract int compareTo(GameElement element);
 	
 	public int getXInPx() {
 		return this.x * Labyrinth.FIELD_IN_PX;

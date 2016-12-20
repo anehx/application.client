@@ -1,4 +1,5 @@
-package model;
+/*
+package application.client.model;
 
 public class LabyrinthStub extends Labyrinth {
 	private static LabyrinthStub instance;
@@ -51,4 +52,4 @@ public class LabyrinthStub extends Labyrinth {
 		
 		return LabyrinthStub.instance;
 	}
-}
+}*/
