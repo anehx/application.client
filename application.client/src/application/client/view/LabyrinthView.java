@@ -6,8 +6,10 @@ import java.util.Observable;
 import java.util.Observer;
 import javax.swing.JPanel;
 
-import application.client.model.GameElement;
+import application.client.model.Bomb;
+import application.client.model.Box;
 import application.client.model.Labyrinth;
+import application.client.model.Player;
 
 @SuppressWarnings("serial")
 public class LabyrinthView extends JPanel implements Observer {
@@ -26,9 +28,15 @@ public class LabyrinthView extends JPanel implements Observer {
 		super.paintComponent(g);
 
 		if (this.labyrinth.isStarted()) {
-			for (GameElement element : this.labyrinth.getElements()) {
-				element.draw(g);
-			}	
+			for (Box box : this.labyrinth.getBoxes()) {
+				box.draw(g);
+			}
+			for (Bomb bomb : this.labyrinth.getBombs()) {
+				bomb.draw(g);
+			}
+			for (Player player : this.labyrinth.getPlayers()) {
+				player.draw(g);
+			}
 		}
 	}
 }

@@ -11,7 +11,7 @@ public class PlayerJoinedController extends MessageController {
 			this.labyrinth.player = player;
 		}
 		
-		this.labyrinth.addElement(player);
+		this.labyrinth.addPlayer(player);
 		
 		this.log.addMessage("Player " + message.getPlayer() + " joined the Game");
 	}

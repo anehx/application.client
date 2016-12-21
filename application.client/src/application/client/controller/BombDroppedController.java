@@ -5,7 +5,7 @@ import protocol.BombDroppedMessage;
 
 public class BombDroppedController extends MessageController {
 	public void bombDropped(BombDroppedMessage message) {
-		this.labyrinth.addElement(new Bomb(message.getPositionX(), message.getPositionY(), message.getId()));
+		this.labyrinth.addBomb(new Bomb(message.getPositionX(), message.getPositionY(), message.getId()));
 	}
 
 }

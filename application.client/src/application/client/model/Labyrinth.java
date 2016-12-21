@@ -3,15 +3,17 @@ package application.client.model;
 import java.util.Observable;
 import java.util.Vector;
 
-import application.client.model.GameElement;
-
 public class Labyrinth extends Observable {
 	protected static Labyrinth instance;
-	
+
 	public static final int FIELD_IN_PX = 32;
 	
-	private Vector<GameElement> elements = new Vector<GameElement>();
+	private Vector<Player> players = new Vector<Player>();
+	private Vector<Box> boxes = new Vector<Box>();
+	private Vector<Bomb> bombs = new Vector<Bomb>();
+	
 	private boolean started = false;
+	
 	public String playerName;
 	public Player player;
 	
@@ -26,17 +28,49 @@ public class Labyrinth extends Observable {
 		return Labyrinth.instance;
 	}
 	
-	public void addElement(GameElement element) {
-		this.elements.add(element);
+	public boolean isStarted() {
+		return this.started;
+	}
+
+	public void setStarted(boolean started) {
+		this.started = started;
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public void addPlayer(Player player) {
+		this.players.add(player);
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public void addBox(Box box) {
+		this.boxes.add(box);
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public void addBomb(Bomb bomb) {
+		this.bombs.add(bomb);
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public void setBoxes(Vector<Box> boxes) {
+		this.boxes = boxes;
 		
 		this.setChanged();
 		this.notifyObservers();
 	}
 	
 	public Player findPlayer(String name) {
-		for (GameElement element : this.elements) {
-			if (element instanceof Player && ((Player)element).name.equals(name)) {
-				return (Player)element;
+		for (Player player : this.players) {
+			if (player.name.equals(name)) {
+				return player;
 			}
 		}
 		
@@ -44,9 +78,9 @@ public class Labyrinth extends Observable {
 	}
 	
 	public Bomb findBomb(String id) {
-		for (GameElement element : this.elements) {
-			if (element instanceof Bomb && ((Bomb)element).id.equals(id)) {
-				return (Bomb)element;
+		for (Bomb bomb : this.bombs) {
+			if (bomb.id.equals(id)) {
+				return bomb;
 			}
 		}
 		
@@ -61,31 +95,28 @@ public class Labyrinth extends Observable {
 	}
 
 	public void removePlayer(String playerName) {
-		this.elements.remove(this.findPlayer(playerName));
+		this.players.remove(this.findPlayer(playerName));
 		
 		this.setChanged();
 		this.notifyObservers();
 	}
 	
 	public void removeBomb(String id) {
-		this.elements.remove(this.findBomb(id));
+		this.bombs.remove(this.findBomb(id));
 		
 		this.setChanged();
 		this.notifyObservers();
 	}
 
-	public boolean isStarted() {
-		return this.started;
+	public Vector<Player> getPlayers() {
+		return this.players;
 	}
-
-	public void setStarted(boolean started) {
-		this.started = started;
-		
-		this.setChanged();
-		this.notifyObservers();
+	
+	public Vector<Box> getBoxes() {
+		return this.boxes;
 	}
-
-	public Vector<GameElement> getElements() {
-		return this.elements;
+	
+	public Vector<Bomb> getBombs() {
+		return this.bombs;
 	}
 }
