@@ -25,9 +25,4 @@ public class Box extends GameElement {
 		
 		g.fillRect(this.getXInPx(), this.getYInPx(), this.width, this.height);
 	}
-
-	@Override
-	public int compareTo(GameElement element) {
-		return -1;
-	};
 }

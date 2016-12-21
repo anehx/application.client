@@ -49,9 +49,4 @@ public class Player extends GameElement {
 		this.x += dir[0];
 		this.y += dir[1];
 	}
-
-	@Override
-	public int compareTo(GameElement element) {
-		return 0;
-	}
 }

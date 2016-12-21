@@ -16,9 +16,4 @@ public class Bomb extends GameElement {
 		g.setColor(Color.RED);
 		g.drawOval(this.getXInPx() - 11 + 16, this.getYInPx() - 11 + 16, 22, 22);
 	}
-
-	@Override
-	public int compareTo(GameElement element) {
-		return 1;
-	};
 }

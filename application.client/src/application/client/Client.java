@@ -14,9 +14,9 @@ import application.client.view.LogView;
 import application.client.view.LoginView;
 import application.client.view.View;
 import protocol.Message;
-import network.client.ClientApplicationInterface;
-import network.client.ServerProxy;
-import network.client.ServerProxyStub;
+import network.ClientApplicationInterface;
+import network.ServerProxy;
+// import network.client.ServerProxyStub;
 
 public class Client implements ClientApplicationInterface {
 	public ServerProxy serverProxy;
@@ -35,14 +35,12 @@ public class Client implements ClientApplicationInterface {
 	/**
 	 * Initialize the main controller and view
 	 * and set the window visible
-	 * @throws IOException 
-	 * @throws UnknownHostException 
 	 */
 	private Client() {
 		Labyrinth labyrinth = Labyrinth.getInstance();
 		Log log = Log.getInstance();
 		
-		this.generateInitialData();
+		// this.generateInitialData();
 		
 		View view = new View();
 		LoginView loginView = new LoginView();
@@ -53,7 +51,13 @@ public class Client implements ClientApplicationInterface {
 		new KeyController(this, view);
 		
 		this.dispatcher = new Dispatcher();
-		this.serverProxy = new ServerProxyStub(this);
+		
+		try {
+			this.serverProxy = new ServerProxy(this, "localhost");
+		} catch (IOException e) {
+			e.printStackTrace();
+			return;
+		}
 		
 		labyrinth.addObserver(labyrinthView);
 		log.addObserver(logView);
@@ -107,7 +111,7 @@ public class Client implements ClientApplicationInterface {
 	}
 
 	@Override
-	public void handleMessage(Message message) {
+	public void handleMessage(ServerProxy serverProxy, Message message) {
 		this.dispatcher.dispatchMessage(message);
 	}
 }
