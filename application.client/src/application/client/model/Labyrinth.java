@@ -42,6 +42,16 @@ public class Labyrinth extends Observable {
 		
 		return null;
 	}
+	
+	public Bomb findBomb(String id) {
+		for (GameElement element : this.elements) {
+			if (element instanceof Bomb && ((Bomb)element).id.equals(id)) {
+				return (Bomb)element;
+			}
+		}
+		
+		return null;
+	}
 
 	public void movePlayer(String playerName, String direction) {
 		this.findPlayer(playerName).move(direction);
@@ -52,6 +62,13 @@ public class Labyrinth extends Observable {
 
 	public void removePlayer(String playerName) {
 		this.elements.remove(this.findPlayer(playerName));
+		
+		this.setChanged();
+		this.notifyObservers();
+	}
+	
+	public void removeBomb(String id) {
+		this.elements.remove(this.findBomb(id));
 		
 		this.setChanged();
 		this.notifyObservers();

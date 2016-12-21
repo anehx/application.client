@@ -3,7 +3,7 @@ package application.client.controller;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-import application.client.BombermanClient;
+import application.client.Client;
 import application.client.model.Labyrinth;
 import application.client.model.Player;
 import application.client.view.View;
@@ -11,10 +11,10 @@ import protocol.BombDroppedMessage;
 import protocol.PlayerMovedMessage;
 
 public class KeyController implements KeyListener {
-	private BombermanClient client;
+	private Client client;
 	private View view;
 	
-	public KeyController(BombermanClient client, View view) {
+	public KeyController(Client client, View view) {
 		this.client = client;
 		this.view = view;
 		

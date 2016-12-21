@@ -14,9 +14,7 @@ public class Bomb extends GameElement {
 	
 	public void draw(Graphics g) {
 		g.setColor(Color.RED);
-		g.fillOval(this.getXInPx() - 11 + 16, this.getYInPx() - 11 + 16, 22, 22);
-		g.setColor(Color.BLACK);
-		g.fillOval(this.getXInPx() - 10 + 16, this.getYInPx() - 10 + 16, 20, 20);
+		g.drawOval(this.getXInPx() - 11 + 16, this.getYInPx() - 11 + 16, 22, 22);
 	}
 
 	@Override

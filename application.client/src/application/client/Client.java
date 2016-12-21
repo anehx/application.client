@@ -18,7 +18,7 @@ import network.client.ClientApplicationInterface;
 import network.client.ServerProxy;
 import network.client.ServerProxyStub;
 
-public class BombermanClient implements ClientApplicationInterface {
+public class Client implements ClientApplicationInterface {
 	public ServerProxy serverProxy;
 	public Dispatcher dispatcher;
 	public String playerName;
@@ -29,7 +29,7 @@ public class BombermanClient implements ClientApplicationInterface {
 	 * @param args
 	 */
 	public static void main(String args[]) {
-		new BombermanClient();
+		new Client();
 	}
 	
 	/**
@@ -38,7 +38,7 @@ public class BombermanClient implements ClientApplicationInterface {
 	 * @throws IOException 
 	 * @throws UnknownHostException 
 	 */
-	private BombermanClient() {
+	private Client() {
 		Labyrinth labyrinth = Labyrinth.getInstance();
 		Log log = Log.getInstance();
 		

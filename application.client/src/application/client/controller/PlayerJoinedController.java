@@ -1,9 +1,9 @@
-package application.client.handler;
+package application.client.controller;
 
 import application.client.model.Player;
 import protocol.PlayerJoinedMessage;
 
-public class PlayerJoinedHandler extends MessageHandler {
+public class PlayerJoinedController extends MessageController {
 	public void playerJoined(PlayerJoinedMessage message) {
 		Player player = new Player(message.getInitialX(), message.getInitialY(), message.getPlayer());
 		

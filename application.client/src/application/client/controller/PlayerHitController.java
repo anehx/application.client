@@ -1,8 +1,8 @@
-package application.client.handler;
+package application.client.controller;
 
 import protocol.PlayerHitMessage;
 
-public class PlayerHitHandler extends MessageHandler {
+public class PlayerHitController extends MessageController {
 	public void playerHit(PlayerHitMessage message) {
 		this.labyrinth.removePlayer(message.getPlayer());
 		

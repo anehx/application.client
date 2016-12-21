@@ -3,7 +3,7 @@ package application.client.controller;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import application.client.BombermanClient;
+import application.client.Client;
 import application.client.model.Labyrinth;
 import application.client.view.LoginView;
 import application.client.view.View;
@@ -11,11 +11,11 @@ import protocol.GameStartedMessage;
 import protocol.PlayerJoinedMessage;
 
 public class ActionController implements ActionListener {
-	private BombermanClient client;
+	private Client client;
 	private LoginView view;
 	private View window;
 	
-	public ActionController(BombermanClient client, View window, LoginView view) {
+	public ActionController(Client client, View window, LoginView view) {
 		this.client = client;
 		this.view = view;
 		this.window = window;

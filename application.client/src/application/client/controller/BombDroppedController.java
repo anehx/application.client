@@ -1,9 +1,9 @@
-package application.client.handler;
+package application.client.controller;
 
 import application.client.model.Bomb;
 import protocol.BombDroppedMessage;
 
-public class BombDroppedHandler extends MessageHandler {
+public class BombDroppedController extends MessageController {
 	public void bombDropped(BombDroppedMessage message) {
 		this.labyrinth.addElement(new Bomb(message.getPositionX(), message.getPositionY(), message.getId()));
 	}

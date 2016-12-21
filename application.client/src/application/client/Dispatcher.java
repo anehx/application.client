@@ -1,15 +1,20 @@
 package application.client;
 
 
-import application.client.handler.BombDroppedHandler;
-import application.client.handler.BombExplodedHandler;
-import application.client.handler.ErrorHandler;
-import application.client.handler.GameStartedHandler;
-import application.client.handler.PlayerHitHandler;
-import application.client.handler.PlayerJoinedHandler;
-import application.client.handler.PlayerMovedHandler;
 import protocol.Message;
 import protocol.PlayerHitMessage;
+
+import java.lang.reflect.Constructor;
+import java.lang.reflect.InvocationTargetException;
+
+import application.client.controller.BombDroppedController;
+import application.client.controller.BombExplodedController;
+import application.client.controller.ErrorController;
+import application.client.controller.GameStartedController;
+import application.client.controller.MessageController;
+import application.client.controller.PlayerHitController;
+import application.client.controller.PlayerJoinedController;
+import application.client.controller.PlayerMovedController;
 import protocol.BombDroppedMessage;
 import protocol.BombExplodedMessage;
 import protocol.ErrorMessage;
@@ -20,31 +25,31 @@ import protocol.PlayerMovedMessage;
 public class Dispatcher {
 	public void dispatchMessage(Message message) {
 		if (message instanceof BombDroppedMessage) {
-			BombDroppedHandler handler = new BombDroppedHandler();
+			BombDroppedController handler = new BombDroppedController();
 			handler.bombDropped((BombDroppedMessage)message);
 		}
 		else if (message instanceof BombExplodedMessage) {
-			BombExplodedHandler handler = new BombExplodedHandler();
+			BombExplodedController handler = new BombExplodedController();
 			handler.bombExploded((BombExplodedMessage)message);
 		}
 		else if (message instanceof ErrorMessage) {
-			ErrorHandler handler = new ErrorHandler();
+			ErrorController handler = new ErrorController();
 			handler.error((ErrorMessage)message);
 		}
 		else if (message instanceof GameStartedMessage) {
-			GameStartedHandler handler = new GameStartedHandler();
+			GameStartedController handler = new GameStartedController();
 			handler.gameStarted((GameStartedMessage)message);
 		}
 		else if (message instanceof PlayerHitMessage) {
-			PlayerHitHandler handler = new PlayerHitHandler();
+			PlayerHitController handler = new PlayerHitController();
 			handler.playerHit((PlayerHitMessage)message);
 		}
 		else if (message instanceof PlayerJoinedMessage) {
-			PlayerJoinedHandler handler = new PlayerJoinedHandler();
+			PlayerJoinedController handler = new PlayerJoinedController();
 			handler.playerJoined((PlayerJoinedMessage)message);
 		}
 		else if (message instanceof PlayerMovedMessage) {
-			PlayerMovedHandler handler = new PlayerMovedHandler();
+			PlayerMovedController handler = new PlayerMovedController();
 			handler.playerMoved((PlayerMovedMessage)message);
 		}
 	}

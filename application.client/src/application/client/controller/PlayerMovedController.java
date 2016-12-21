@@ -1,8 +1,8 @@
-package application.client.handler;
+package application.client.controller;
 
 import protocol.PlayerMovedMessage;
 
-public class PlayerMovedHandler extends MessageHandler {
+public class PlayerMovedController extends MessageController {
 	public void playerMoved(PlayerMovedMessage message) {
 		this.labyrinth.movePlayer(message.getPlayer(), message.getDirection());
 	}

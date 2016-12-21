@@ -19,7 +19,7 @@ public class Player extends GameElement {
 	}
 	
 	public void draw(Graphics g) {
-		g.setColor(Color.CYAN);
+		g.setColor(Color.BLACK);
 		g.fillOval(
 			this.getXInPx() + this.width / 4,
 			this.getYInPx() + this.width / 4,
